@@ -4,6 +4,7 @@ const path = require('path');
 
 app.use(express.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views')); // important for deployment
 
 app.get('/', (req, res) => {
   res.render('table', { number: null, table: null });
@@ -19,10 +20,7 @@ app.post('/', (req, res) => {
     }
   }
 
-  res.render('table', { number, table }); 
+  res.render('table', { number, table });
 });
 
-const PORT = 3000;
-app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
-});
+module.exports = app; // ✅ This is the Vercel requirement
