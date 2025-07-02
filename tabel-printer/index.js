@@ -23,4 +23,8 @@ app.post('/', (req, res) => {
   res.render('table', { number, table });
 });
 
-module.exports = app; // ✅ This is the Vercel requirement
+// ✅ Add this part for Railway:
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
