@@ -1,13 +1,1 @@
-# Ignore node modules
 node_modules/
-
-# Logs
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# Environment config (future-proof)
-.env
-
-# System files
-.DS_Store
